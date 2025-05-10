@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { products } from "../assets/frontend_assets/assets";
 
 // Create the context
@@ -8,12 +8,13 @@ const ShopContext = createContext();
 const ShopContextProvider = (props) => {
   const delivery_fee = 10;
   const currency = "$";
-
+const [search, setSearch] = useState("");
+const [showSearch, setShowSearch] = useState(true);
   // Combine all values you want to provide in the context
   const value = {
     products,
     delivery_fee,
-    currency
+    currency,search,setSearch,showSearch,setShowSearch
   };
 
   return (

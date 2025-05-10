@@ -1,0 +1,31 @@
+created context file:
+import { useContext } from "react";
+import { products } from "../assets/frontend_assets/assets";
+const ShopContext = useContext;
+const ShopContextProvider = (props) => {
+const delivery_fee = 10;
+const currency = "$";
+    const value = {
+products
+    }
+    return (
+        <ShopContext.Provider value={value} delivery_fee={delivery_fee} currency={currency}>
+            {props.children}
+        </ShopContext.Provider>
+    )
+}
+export default ShopContextProvider
+Onece e create th context file we add that context I the main file so that its accessible in all the componets that consiumes the context
+_________________________________________________________________
+then we create a component called latest collection and in it we create a ;lates collection component
+
+we then mount that n in the homepage under the hero section
+
+in the latest collection page we getthe products from the useContext and then slice them for 10 items and assign to a state variable which weel map out to display the using a component called product  item to which we will pass the props of each itrem
+_____________
+then we create a product item component to list out the individual products
+----------------------
+then we create a component called best seller.jsx
+to display the best seller products
+take the similar approach as latest collection 
+from the products imported from context filter out the once whose bestseller property is try and render using the product item component

@@ -1,0 +1,4 @@
+We create the our policy component and then place it I the home screen
+-----------------------
+next up we create the newsletter box component nd start working on it
+_____________________

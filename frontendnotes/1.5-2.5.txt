@@ -1,0 +1,27 @@
+created collection page added filter by category andsort by price functionality and also a search product functionaliuty
+
+the product data is fetched on page load by the context which is then used as the flterproducts which is mapped and rendered.based on the category selected and selected sub category the filterproducvts array changes which changes the the items rendered.this filtered products array is then modified according the tmethod choosed form prceing which is from low to high or high to low
+
+
+for the the search functionality we create state variable in the context called search and the setter function setSearch
+also another state variable with booklean variable showSearch and setShowSerch
+     
+then we add that to the functions that is available through the context
+
+then we create a copmponent called search bar which will be integerated in the collections page when the search is toggled
+
+the searchbar component is displayed on if showSearch value is true
+
+next we want to set up the search bar such that it is displayed only in the collection page
+
+for that we use cosnt location = useLocation which will find out which route is currently rendered 
+then well set up a useeffect to track the the current location and toggle a state variable called visible .Based on the truthy value of visible only the search bar component will get rendered
+
+then we use the search and shoSearch from the context in the collections
+
+in the apply filter function which filters the products vased on codition we addd a if statement that checks if the shoSearch is true and if true it will check if any of the items contains the the search term
+
+if(showSearch && search){
+filterdProductscopy =filterdProductscopy.filter(item=> item.name.toLowerCase().includes(search.toLowerCase()) }
+
+and then we add search nad ShowSearch to the dependencies of teh useeffect that calls the apply filterfunction so that when ver the search term changes product filtering happens accordingly
