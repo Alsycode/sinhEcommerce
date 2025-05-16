@@ -1,8 +1,10 @@
 import React, { useContext, useEffect,useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
+import { assets } from '../assets/frontend_assets/assets';
+import CartTotal from '../components/CartTotal';
 const Cart = () => {
-  const {products,currency,cartItems} = useContext(ShopContext);
+  const {products,currency,cartItems,updateQuantity} = useContext(ShopContext);
   const [cartData,setCartData] = useState([]);
   useEffect(()=>{
     let tempData = [];
@@ -41,11 +43,18 @@ if(cartItems[items][item] > 0){
   </div>
 </div>
 </div>
+<input type='number' className='border   px-1 py-1 sm:px-2 max-w-10 sm:max-w-20' defaultValue={  item.quantity} min={1} onChange={(e)=>e.target.value === "" || e.target.value === 0 ? null : updateQuantity(item._id,item.size,Number(e.target.value))}/>
+            <img src={assets.bin_icon} className='w-4 sm:w-5 mr-4 cursor-pointer' onClick={()=>updateQuantity(item._id,item.size,0)}/>
             </div>
           )
         })
       }
+<div className='flex flex-end justify-end my-10'> 
 
+<div className='w-full sm:w-[450px]'> 
+<CartTotal/>
+</div>
+</div>
     </div>
   )
 }

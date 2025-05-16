@@ -33,6 +33,31 @@ setCartItems(cartData);
 console.log(cartData[itemId])
 }
 
+// function to delete an itema and also update its quantity
+const updateQuantity = async (itemId,size,quantity) =>{
+  console.log("update")
+let cartData = structuredClone(cartItems);
+cartData[itemId][size] = quantity;
+setCartItems(cartData);
+}
+// function to calculate the cart amount
+const cartAmount = () => {
+  let totalAmount = 0;
+  for(const items in cartItems){
+    const itemInfo = products.find(product=>product._id === items);
+    for(const item in cartItems[items]){
+      try{
+if(cartItems[items][item] > 0){
+  totalAmount += itemInfo.price * cartItems[items][item];
+}
+      }
+      catch(error){
+console.log(error)
+      }
+    }
+  }
+  return totalAmount;
+}
 const getCartCount = () => {
   let totalCount = 0;
   for(const items in cartItems){
@@ -56,7 +81,7 @@ useEffect(()=>{
   const value = {
     products,
     delivery_fee,
-    currency,search,setSearch,showSearch,setShowSearch,cartItems,addToCart,getCartCount
+    currency,search,setSearch,showSearch,setShowSearch,cartItems,addToCart,getCartCount,updateQuantity,cartAmount
   };
 
   return (
