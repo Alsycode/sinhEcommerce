@@ -4,7 +4,7 @@ import Title from '../components/Title';
 import { assets } from '../assets/frontend_assets/assets';
 import CartTotal from '../components/CartTotal';
 const Cart = () => {
-  const {products,currency,cartItems,updateQuantity} = useContext(ShopContext);
+  const {products,currency,cartItems,updateQuantity,navigate} = useContext(ShopContext);
   const [cartData,setCartData] = useState([]);
   useEffect(()=>{
     let tempData = [];
@@ -53,6 +53,11 @@ if(cartItems[items][item] > 0){
 
 <div className='w-full sm:w-[450px]'> 
 <CartTotal/>
+<div className='w-full text-end'>
+<button onClick={()=>navigate("/place-order")}className='text-sm px-4 py-4 my-4 bg-black text-white'>
+  PROCEED TO CHECKOUT
+</button>
+</div>
 </div>
 </div>
     </div>

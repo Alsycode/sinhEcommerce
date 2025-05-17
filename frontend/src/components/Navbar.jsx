@@ -10,7 +10,10 @@ const Navbar = () => {
   console.log(visible)
   return (
     <div id='navvvv' className='flex justify-between items-center py-5 w-full'>
-    <Link to="/"> <img src={assets.logo} alt='logo image' className='w-36'/></Link> 
+    {/* <Link to="/"> <img src={assets.logo} alt='logo image' className='w-36'/></Link>  */}
+    <h2 className=''>
+      <span className='text-3xl'>S</span><span className='text-2xl'>IN</span><span className='text-3xl'>H</span>
+    </h2>
       <ul className='text-gray-700 text-sm hidden sm:flex font-semibold gap-5'>
         <li>
           <NavLink
