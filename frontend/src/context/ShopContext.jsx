@@ -9,7 +9,7 @@ const ShopContext = createContext();
 // Define the provider component
 const ShopContextProvider = (props) => {
   const delivery_fee = 10;
-  const currency = "$";
+  const currency = "Rs. ";
 const [search, setSearch] = useState("");
 const [showSearch, setShowSearch] = useState(true);
 const [cartItems, setCartItems] = useState({});
