@@ -44,7 +44,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            href="/contact"
+            to="/contact"
             className={({ isActive }) => isActive ? "flex flex-col items-center gap-1 text-gray-700 active" : "flex flex-col items-center gap-1 text-gray-700"}
           >
             <p>CONTACT</p>
