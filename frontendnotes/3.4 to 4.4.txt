@@ -1,0 +1,9 @@
+3.4 to 4.4
+
+created the cart page where the items added to cart are present
+added the functionality to update the items added to cart in the navbar 
+and also in the cart page and also calculate the total amount and proceed to checkout
+set up the proceed to checkout button to direct to place orders page 
+desgned place order page with the inputs of user data on left and cardt amount and payment method selection on the right
+the we create a proceed to checkout button
+On clicking it well navigate to the orders page

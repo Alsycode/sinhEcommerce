@@ -1,0 +1,47 @@
+create backend folder and then create a server.js
+ file
+then run npm init 
+then a package.json file will be created
+in it remove the test command
+the install some packages as follows: npm I cors dotenv express multer nodemon bcrypt cloudinary jsonwebtoken mongoose stripe razorpay validator
+then create a new folder called config 
+then a folder called middlewarews
+then a folder named models
+then a folder called controllers
+then route folder
+then in package.json add the script called server:"nodemon server.js",this command will help us run the npm run server command and start the backend
+the above the debug add a type property:"type": module;
+
+then setup the server.js file like this:
+import express from "express"
+import cors from "cors"
+import "dotenv/config"
+
+const app = express();
+const port = process.env.PORT || 4000;
+
+app.get("/",(req,res)=>{
+    res.send("API working")
+})
+app.listen(port,()=>console.log('Server is running on port : ' + port))
+
+then run :npm run server command
+and install thunderclient extension in vs code whch will help us try apis
+
+then open thunder client and send a get request to localhost:4000 then well see the response api working and status 200
+
+then go to mongo db atlas create a project and then ad a cluster which is free and then create a databse user and choose the drivers connection method
+use nodejs and 5.5 version and then copy the connection string till.net and copy in the env and save it as MONGODB_URI
+
+then o to cloudinary and copy the pai key ,api secret and clod name and create a cloudinary confi file 
+the o to sever.js file and connect both the monodb and cloudinary
+
+
+then we o to the models folder and create schema for our product and user
+
+after creatin the user and product models we setup user controllers 
+
+after stein up the controllers we create routes for users
+
+and the we move to the server.js and create api endpoints for the user router
+ 

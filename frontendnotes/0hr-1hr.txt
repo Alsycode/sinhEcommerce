@@ -1,0 +1,8 @@
+crete react app using vite
+setup tailwind css and react router dom
+created directories of each page
+then created rotes for each page
+created navbar
+imported google fonts and added in the index.css 
+created her section
+no going to create the the context folder for the context logic
