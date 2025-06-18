@@ -17,7 +17,7 @@ mongoDb();
 // api endpoints
 app.use("/api/user",userRouter)
 
-app.use("/api/products",productRouter)
+app.use("/api/product",productRouter)
 app.get("/",(req,res)=>{
     res.send("API working")
 })

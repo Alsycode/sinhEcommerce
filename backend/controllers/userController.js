@@ -61,7 +61,11 @@ const logoutUser = (req,res) => {
 
 }   
 const adminLogin = (req,res) => {
+try{
 
+}catch(error){
+    res.json()
+}
 }
 
 export { loginUser,logoutUser,registerUser,adminLogin }
