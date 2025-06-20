@@ -1,0 +1,2 @@
+created getcartAmount and add to cart functionsin context ,added the prdoduct display page and related products component in the bottom of product display page
+Implemented the functionality to updates the the product added to the cart on the navbar and also in th contetx
