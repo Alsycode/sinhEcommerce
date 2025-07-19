@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),  tailwindcss(),],
-  server: {
+  server: {port:5174,
     hmr: {
       overlay: false, // Optional: disable overlay if it annoys you
     },
